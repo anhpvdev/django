@@ -1,0 +1,39 @@
+{% extends "pages/base.html" %}
+
+<title>{% block  title%} comic {% endblock  %}</title>
+{% block listcomic%}
+    {% if dscomic%}
+        {% for item in dscomic%}
+            <div class="comic--list__item col c-6 m-3 l-2__4">
+                <div>
+                    <img src="{{item.img}}" alt="">
+                        <div class="comic--list__info">
+                            <h3>{{item.name}}</h3>
+                            <h4 class="info__web">Truyện đăng tại: <br> 
+                                <a href="https://truyentranhaudio.online/truyen-ta-gia-thanh-npc-tai-the-gioi-tien-hiep.html">{{item.web}}</a>
+                            </h4>
+                            <h4 class="info__ytb">xem chap mới sớm nhất tại: <br> 
+                                <a href="https://www.youtube.com/c/mongtiengioi">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </h4>
+                        </div>
+                    <div class="comic--list__info1"></div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock  %}
+
+{% block listmember%}
+    {% if dsmember%}
+        {% for item in dsmember %}
+            <div class="member--list__item col c-6 m-3 l-2__4">
+                <div>
+                    <img src="{{item.avatar}}" alt="">
+                </div>
+                <h5>{{item.membername}}</h5>
+            </div>    
+        {% endfor %}
+    {% endif %}
+{% endblock  %}
